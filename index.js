@@ -51,7 +51,7 @@ function gulpRename(obj) {
 
     }
 
-    file.path = Path.join(file.base, path);
+    file.path = Path.isAbsolute (path) ? path : Path.join(file.base, path);
 
     // Rename sourcemap if present
     if (file.sourceMap) {
